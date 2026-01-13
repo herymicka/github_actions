@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-on-ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-${{ matrix.ubuntu }}
     strategy:
       matrix:
         ubuntu: [20.04, 22.04, 24.04]
