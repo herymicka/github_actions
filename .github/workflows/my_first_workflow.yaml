@@ -2,17 +2,20 @@ name: My First Workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   run-on-ubuntu:
     runs-on: ubuntu-${{ matrix.ubuntu }}
     strategy:
       matrix:
-        ubuntu: [20.04, 22.04, 24.04]
+        ubuntu: ["20.04", "22.04", "24.04"]
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Display system info
         run: |
           echo "Running on Ubuntu ${{ matrix.ubuntu }}"
           uname -a
+
